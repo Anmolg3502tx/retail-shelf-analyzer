@@ -16,11 +16,11 @@ Three independent Flask services communicate over HTTP:
 
 ## Features
 
-- 📦 **Product Detection** – YOLOv8-nano detects all products on a shelf
-- 🎨 **Brand Grouping** – DBSCAN clusters products by visual similarity (colour + CNN embeddings)
-- 🖥️ **Web UI** – Drag-and-drop image upload with annotated output and JSON response
-- 🐳 **Docker support** – One command to spin up all services
-- ⚡ **CPU-only** – No GPU required; runs on any laptop
+ **Product Detection** – YOLOv8-nano detects all products on a shelf
+**Brand Grouping** – DBSCAN clusters products by visual similarity (colour + CNN embeddings)
+**Web UI** – Drag-and-drop image upload with annotated output and JSON response
+ **Docker support** – One command to spin up all services
+**CPU-only** – No GPU required; runs on any laptop
 
 ## Quick Start
 
