@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  flask_server:
+    build:
+      context: .
+      dockerfile: flask_server/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - DETECTOR_URL=http://detector_service:5001
+      - GROUPING_URL=http://grouping_service:5002
+      - OUTPUT_DIR=/app/visualizations
+    volumes:
+      - ./visualizations:/app/visualizations
+    depends_on:
+      - detector_service
+      - grouping_service
+    networks:
+      - pipeline_net
+
+  detector_service:
+    build:
+      context: .
+      dockerfile: detector_service/Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - MODEL_CONF=0.25
+      - MODEL_IOU=0.45
+    networks:
+      - pipeline_net
+
+  grouping_service:
+    build:
+      context: .
+      dockerfile: grouping_service/Dockerfile
+    ports:
+      - "5002:5002"
+    networks:
+      - pipeline_net
+
+networks:
+  pipeline_net:
+    driver: bridge

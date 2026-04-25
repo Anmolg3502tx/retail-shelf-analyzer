@@ -1,0 +1,33 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Model weights (large binary files)
+*.pt
+*.pth
+*.onnx
+
+# Output images
+visualizations/
+
+# Environment
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temp folders
+{flask_server,detector_service,grouping_service,shared,outputs,static/
